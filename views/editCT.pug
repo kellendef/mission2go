@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit CT Record</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster3.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Edit Cancelled Team Record [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently editing the following Cancelled Team: </h3>
+        
+        <table>
+            <tr>
+                <th>TeamID</th> 
+                <th>TeamName</th> 
+                <th>ChurchName</th> 
+                <th>District</th> 
+                <th>LeaderEmail</th> 
+                <th>LeaderName</th> 
+                <th>Partership</th>
+            </tr>
+
+            <tr></tr>
+            -teamCTedit.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.TeamID}</td> 
+                        <td>  #{element.TeamName}</td>  
+                        <td>  #{element.ChurchName}</td>
+                        <td>  #{element.District}</td>
+                        <td>  #{element.LeaderEmail}</td>
+                        <td>  #{element.LeaderName}</td>
+                    </tr>
+            -});
+        </table>
+        <br>
+        <br> 
+        <br />
+   
+        <form id="editCTteam" action="editCTteam" method="POST" name="editCTteam">
+            <input type = "hidden" id="newTeamID" name="newTeamID" required readonly>
+                    -teamCTedit.forEach(function(element){
+                            document.getElementById('TeamID').value=element.TeamID
+                    -});
+            <br>
+            <br />
+            <label for="newTeamName">New Team Name:               </label>
+                <input id="newTeamName" type = "text" name = "newTeamName">
+            
+            <br>
+            <br />
+            <label for="newChurchName">New Church Name:               </label>
+                <input id="newChurchName" type = "text" name = "newChurchName">
+            
+            <br>
+            <br />
+            <label for="newDistrict">New District:               </label>
+                <input id="newDistrict" type = "text" name = "newDistrict">
+            
+            <br>
+            <br />
+            <label for="newLeaderEmail">New Leader Email:               </label>
+                <input id="newLeaderEmail" type = "text" name = "newLeaderEmail">
+            
+            <br>
+            <br />
+            <label for="newLeaderName">New Leader Name:               </label>
+                <input id="newLeaderName" type = "text" name = "newLeaderName">
+            
+            <br>
+            <br />
+            <label for="newPartership">New Partership: </label>
+                <select id = "newPartership" name = "newPartership">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br>
+            <br>
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

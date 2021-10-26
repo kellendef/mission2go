@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Viewing Team Records</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> View Records (TEAM)[AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently viewing all teams records: </h3>
+        
+        <form id="allTeams" action="allTeams" method="POST" name="allTeams">
+            <table>
+                <tr>
+                    <th>TeamID</th> 
+                    <th>TeamName</th> 
+                    <th>ChurchName</th> 
+                    <th>District</th> 
+                    <th>LeaderEmail</th> 
+                    <th>LeaderName</th> 
+                    <th>EDIT</th> 
+                    <th>DELETE</th> 
+                    <th>View Members</th>
+                </tr>
+
+                <tr>
+                    -teamViewArray.forEach(function (element, index) {
+                        <tr>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.ChurchName}</td>
+                            <td>  #{element.District}</td>
+                            <td>  #{element.LeaderEmail}</td>
+                            <td>  #{element.LeaderName}</td>
+                            <td><input id=#{index} type="Submit" name="RowForEditTeam" value=#{index}></input></td>
+                            <td><input id=#{index} type="Submit" name="RowForDeleteTeam" value=#{index}></input></td>
+                            <td><input id=#{index} type="Submit" name="RowForViewMembers" value=#{element.TeamID}></input></td>
+                        </tr>
+                    -});
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>

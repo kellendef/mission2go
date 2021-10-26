@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Hotel Records</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2>Registered Hotels [AUTHORIZED USERS ONLY]</h2>
+        <br />
+        <h3> Viewing all currently registered hotels</h3>
+        <a href="/newHotel" >Or Make A New Hotel here</a> 
+        <br>
+        <br>
+        <br />
+        <table>
+            <tr>
+                <th>HotelID</th> 
+                <th>HotelName</th> 
+                <th>City</th> 
+                <th>PhoneNum</th>
+            </tr>
+
+            <tr>
+                -tableArrayAllHotels.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.HotelID}</td>
+                        <td>  #{element.HotelName}</td>
+                        <td>  #{element.City}</td> 
+                        <td>  #{element.PhoneNum}</td>
+                    </tr>
+                -});
+        </table> 
+       
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Maxima Teams</title>
+        <meta charset="utf-8"/>
+        style
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Project Teams (MAXIMA ONLY) </h2>
+        <br/>
+        <br>
+        <br>
+        <br>
+        <form action = "GetIndexM" method = "POST">
+        <table>
+            <tr>
+                <th>TeamName</th> 
+                <th>Country</th> 
+                <th>Days</th> 
+                <th>ArrivalDate</th>
+                <th>DepartDate</th> 
+                <th>NumTeamMemb</th> 
+                <th>ProjectID</th> 
+                <th>FName</th> 
+                <th>ProjectMoney</th> 
+                <th>SumOfUSD</th> 
+                <th>Maxima</th> 
+            </tr>
+
+            <tr>
+                -tableArray.forEach(function(element, index){ 
+                        <tr>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.CountryName}</td>
+                            <td>  #{element.Days}</td>
+                            <td>  #{element.ArrivalDate}</td>
+                            <td>  #{element.DepartDate}</td>
+                            <td>  #{element.NumTeamMemb}</td>
+                            <td>  #{element.ProjectID}</td>
+                            <td>  #{element.FName}</td>
+                            <td>  #{element.ProjectMoney}</td>
+                            <td>  #{element.SumOfUSD}</td>
+                            <td>  #{element.Maxima}</td>
+                        </tr>
+                -});
+            </tr>
+        </table>
+        </form>
+        <br> 
+        <br>
+    </body>
+</html> 

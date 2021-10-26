@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Choosing Team</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        
+        <h2> Choose Team [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Choose a team to assign: </h3>
+        
+        <form id="GetTeamIndex" action="GetTeamIndex" method="POST" name="GetTeamIndex">
+            <table>
+                <tr>
+                    <th>TeamID</th> 
+                    <th>TeamName</th> 
+                    <th>ChurchName</th> 
+                    <th>District</th> 
+                    <th>LeaderEmail</th> 
+                    <th>LeaderName</th> 
+                    <th>ASSIGN</th>
+                </tr>
+
+                <tr>
+                    -teamViewAssign.forEach(function (element, index) {
+                        <tr>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.ChurchName}</td>
+                            <td>  #{element.District}</td>
+                            <td>  #{element.LeaderEmail}</td>
+                            <td>  #{element.LeaderName}</td>
+                            <td><input type="Submit" id=#{index} name="RowForTeamToAssign" value=#{element.TeamID}></input></td>
+                        </tr>
+                    -});
+            </table>
+        </form>
+    </body>
+</html>

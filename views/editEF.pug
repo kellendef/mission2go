@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project ExpectedFunds Record Editor</title>
+        <meta charset="utf-8"/>
+        style
+            include CSS/cluster3.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        
+        <h2> Edit ExpectedFunds Records [AUTHORIZED USERS ONLY. PLEASE ENSURE DATA IS CORRECT BEFORE SUBMITTING!] </h2>
+        <br> 
+        <h3> Currently editing the following record: </h3>
+
+        <table>
+            <tr>
+                <th>TeamDetailsID</th> 
+                <th>ProjectFundsRecieved</th> 
+                <th>CancelTeam</th> 
+                <th>ProjectMoney</th> 
+                <th>ArriveDate</th> 
+                <th>ChurchName</th> 
+                <th>TeamName</th> 
+                <th>TeamID</th>
+            </tr>
+
+            <tr>
+                -tableArrayFundsEditor.forEach(function(element){ 
+                        <tr>
+                            <td>  #{element.TeamDetailsID}</td> 
+                            <td>  #{element.ProjectFundsRecieved}</td>  
+                            <td>  #{element.CancelTeam}</td>
+                            <td>  #{element.ProjectMoney}</td>
+                            <td>  #{element.ArriveDate}</td>
+                            <td>  #{element.ChurchName}</td>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.TeamID}</td>
+                        </tr>
+                -});
+        </table>
+        <br>
+        <br>
+        <br />
+        <form id="editEFs" action="editEFs" method="POST" name="editEFs">
+                <input type = "hidden" id="newTeamDetailsID" name="newTeamDetailsID" required readonly>
+                    -tableArrayFundsEditor.forEach(function(element){
+                                document.getElementById('newTeamDetailsID').value=element.TeamDetailsID
+                    -});
+            
+                <input type = "hidden" id="newTeamID" name = "newTeamID" required readonly>
+                    -tableArrayFundsEditor.forEach(function(element){
+                                document.getElementById("newTeamID").value=element.TeamID
+                    -});
+                
+            <br>
+            <br />
+            <label for="newProjectFundsRecieved">Funds Recieved?:             </label>
+                <select id = "newProjectFundsRecieved" name = "newProjectFundsRecieved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+                
+            <br>
+            <br />
+            <label for="newCancelTeam">Team Cancelled?:             </label>
+                <select id = "newCancelTeam" name = "newCancelTeam">
+                    <option value = -1> - </option>
+                    <option value = 1>TRUE</option>
+                    <option value = 0>FALSE</option>
+                </select>
+                
+            <br>
+            <br />
+            <label for="newProjectMoney">New Project Money:        </label>
+                <input id="newProjectMoney" type = "number" name = "newProjectMoney">
+                
+            <br>
+            <br />
+            <label for="newArriveDate">New Arrival Date: </label>
+                <input id="newArriveDate" type = "date" name = "newArrivalDate">
+                
+            <br>
+            <br />
+            <label for="newChurchName">New Church Name:            </label>
+                <input id="newChurchName" type = "text" name = "newChurchName">
+                
+            <br>
+            <br />
+            <label for="newTeamName">New Team Name:               </label>
+                <input id="newTeamName" type = "text" name = "newTeamName">
+        
+                <br>
+                <br />
+                <input type="Submit" value="Save Changes">
+        </form>
+
+    </body>
+</html>

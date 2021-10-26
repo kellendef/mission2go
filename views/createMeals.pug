@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Create Meals</title>
+        <meta charset="utf-8"/>
+        style
+            include CSS/cluster3.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        <h2> Create New Meals [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently creating a  Meal: </h3>
+
+        <table>
+            <tr>
+                <th>TeamDetailsID</th> 
+                <th>ArriveDate</th> 
+                <th>DepartDate</th> 
+                <th>ProjectID</th> 
+                <th>TeamID</th> 
+                <th>CountryID</th> 
+                <th>ProjectMoney</th> 
+                <th>CancelTeam</th> 
+                <th>ProjectFundsReceived</th>
+            </tr>
+                -AllTeamDetailsForMeal.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.TeamDetailsID}</td>
+                        <td>  #{element.ArriveDate}</td>
+                        <td>  #{element.DepartDate}</td> 
+                        <td>  #{element.ProjectID}</td>  
+                        <td>  #{element.TeamID}</td>
+                        <td>  #{element.CountryID}</td>
+                        <td>  #{element.ProjectMoney}</td>
+                        <td>  #{element.CancelTeam}</td>
+                        <td>  #{element.ProjectFundsReceived}</td>
+                    </tr>
+                -});
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+        <form id="create-Meals" action="create-Meals" method="POST" name="create-Meals">
+            <br>
+            <label for="newMealDesc">Meal Description:               </label>
+                <input id="newMealDesc" type = "text" name = "newMealDesc" required>
+            
+            <br />
+            <br />
+            <label for="newMealDateStart">MealDateStart:               </label>
+                <input id="newMealDateStart" type = "date" name = "newMealDateStart" required>
+            
+            <br>
+            <br />
+            <label for="newMealDateStop">Meal Date Stop:               </label>
+                <input id="newMealDateStop" type = "date" name = "newMealDateStop" required>
+            
+            <br>
+            <br />
+            <label for="newMealCost">Meal Cost:               </label>
+                <input id="newMealCost" type = "number" name = "newMealCost" required>
+            
+            <br>
+            <br />
+            <label for="newHowManyEating">How Many Eating:           </label>
+                <input id="newHowManyEating" type = "text" name = "newHowManyEating" required>
+            
+            <br>
+            <br />
+            <label for ="tdm">Select TeamDetails for Assign: </label>
+                <select name = 'tdm' id = 'tdm'>
+                    -AllTeamDetailsForMeal.forEach(function(element,index){ 
+                        <option value = {element.TeamDetailsID}>{element.TeamDetailsID}</option>
+                    -});
+            </select> 
+            
+            <br>
+            <br />
+            <input type="Submit" value="Save Changes">
+
+        </form>
+
+    </body>
+</html>

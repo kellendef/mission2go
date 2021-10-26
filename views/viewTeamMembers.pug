@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Teams Members</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> View/Remove TeamMembers (TEAMMEMBERS)[AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Select a Team Member to Remove if desired: </h3>
+        <br>
+        <form id="getMemberID" action="getMemberID" method="POST" name="getMemberID">
+            <table>
+                <tr>
+                    <th>TeamMemberID</th> 
+                    <th>FName</th> 
+                    <th>PhoneNumber</th> 
+                    <th>District</th> 
+                    <th>Email</th> 
+                    <th>FoodAllergies</th> 
+                    <th>MedicalAllergies</th> 
+                    <th>EDIT MEMBER</th> 
+                    <th>REMOVE MEMBER</th>
+                </tr>     
+
+                <tr>
+                    -MembersArray.forEach(function(element, index){
+                        <tr>
+                            <td>  #{element.TeamMemberID}</td>
+                            <td>  #{element.FName}</td>
+                            <td>  #{element.PhoneNumber}</td>
+                            <td>  #{element.District}</td>
+                            <td>  #{element.Email}</td>
+                            <td>  #{element.FoodAllergies}</td>
+                            <td>  #{element.MedicalAllergies}</td>
+                            <td><input id=#{index} type="Submit" name="RowForMemberToEdit" value=#{index}></input></td>
+                            <td><input id=#{index} type="Submit" name="RowForMemberToDelete" value=#{index}></input></td>
+                            <input type="hidden" name="TMID" value= #{element.TeamMemberID}></input>
+                        </tr>
+                    -});
+                    </table>
+                    <br>
+                    <br>
+
+        </form>  
+      
+    </body>
+</html>

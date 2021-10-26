@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Cancelled Teams</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Delete CT Record [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently deleting the following Cancelled Team: </h3>
+        
+        <table>
+            <tr>
+                <th>TeamID</th> 
+                <th>TeamName</th> 
+                <th>ChurchName</th> 
+                <th>District</th> 
+                <th>LeaderEmail</th> 
+                <th>LeaderName</th> 
+                <th>Partership</th>
+            </tr>
+
+            <tr>
+                -teamCTdelete.forEach(function(element){ 
+                    <tr>                                         
+                        <td>  #{element.TeamID}</td> 
+                        <td>  #{element.TeamName}</td>  
+                        <td>  #{element.ChurchName}</td>
+                        <td>  #{element.District}</td>
+                        <td>  #{element.LeaderEmail}</td>
+                        <td>  #{element.LeaderName}</td>
+                        <td>  #{element.Partership}</td>
+                    </tr>
+                -});
+        </table>
+        <br>
+        <br>  
+        <form id="deleteCTteam" action="deleteCTteam" method="POST" name="deleteCTteam">
+            <input type = "hidden" id="newTeamID" name="newTeamID" required readonly>
+                -teamCTdelete.forEach(function (element) {
+                        document.getElementById('TeamID').value = element.TeamID
+                -});
+            <br />
+            <br />
+            <input type="Submit" value="Delete Record">
+        </form>
+    </body>
+</html>

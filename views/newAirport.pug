@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>New Airport</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster3.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Airport Creator [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently registering a new airport: </h3>
+        
+        <form id="new-Airport" action="new-Airport" method="POST" name="new-Airport">
+            <br>
+            <br />
+            <label for="newAirportName">Airport Name:               </label>
+                <input id="newAirportName" type = "text" name = "newAirportName" required>
+        
+            <br>
+            <br />
+            <label for="newAirportCode">Airport Code:               </label>
+                <input id="newAirportCode" type = "text" name = "newAirportCode" required>
+            
+            <br>
+            <br />
+            <label for="newAirportCity">Airport City:               </label>
+                <input id="newAirportCity" type = "text" name = "newAirportCity" required>
+        
+            <br>
+            <br />
+                <label for ="nac">Select A Country: </label>
+                    <select name = 'nac' id = 'nac' required>
+                        -tableArrayChooseCountry.forEach(function(element,index){ 
+                            <option value = #{element.CountryID}>#{element.CountryName}</option>
+                        -});
+                    </select> 
+                <br />
+            <br />
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

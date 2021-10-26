@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Team Details</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Delete a TeamDetails [AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently deleteing the following TeamDetails record: </h3>
+        <form id="delete-TeamDetails" action="delete-TeamDetails" method="POST" name="delete-TeamDetails">
+            <table>
+                <tr>
+                    <th>TeamDetailsID</th> 
+                    <th>NumTeamMemb</th> 
+                    <th>ArriveFlightNumber</th> 
+                    <th>ArriveDate</th> 
+                    <th>DepartDate</th> 
+                    <th>DepartAirline</th> 
+                    <th>DepartFlightNumber</th> 
+                    <th>ProjectID</th> 
+                    <th>ProjectName</th> 
+                    <th>TeamID</th> 
+                    <th>TeamName</th> 
+                    <th>CountryID</th> 
+                    <th>CountryName</th> 
+                    <th>Maxima</th>
+                </tr>
+
+                <tr>
+                    -deleteTeamDetails.forEach(function (element, index) {
+                            <tr>
+                                <td>  #{element.TeamDetailsID}</td>
+                                <td>  #{element.NumTeamMemb}</td>
+                                <td>  #{element.ArriveFlightNumber}</td>
+                                <td>  #{element.ArriveDate}</td>
+                                <td>  #{element.DepartDate}</td>
+                                <td>  #{element.DepartAirline}</td>
+                                <td>  #{element.DepartFlightNumber}</td>
+                                <td>  #{element.ProjectID}</td>
+                                <td>  #{element.ProjectName}</td>
+                                <td>  #{element.TeamID}</td>
+                                <td>  #{element.TeamName}</td>
+                                <td>  #{element.CountryID}</td>
+                                <td>  #{element.CountryName}</td>
+                                <td>  #{element.Maxima}</td>
+                            </tr>
+                    -});
+            </table>
+            <br>
+            <br>
+            <input type = "hidden" id="TDdelete" name="TDdelete" required readonly>
+                -deleteTeamDetails.forEach(function(element){
+                        document.getElementById('TeamDetailsID').value=element.TeamDetailsID
+                -});
+            <br />
+            <br />
+            <input type="Submit" value="Delete TeamDetails">
+        </form>
+    </body>
+</html>

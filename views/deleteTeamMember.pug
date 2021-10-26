@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Remove Team Member</title>
+        <meta charset="utf-8"/>
+        style
+            include CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Remove TeamMember (TEAMMEMBERS)[AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Select a Team Member to Remove: </h3>
+
+        <form id="delete-Member" action="delete-Member" method="POST" name="delete-Member">
+            <table>
+                <tr>
+                    <th>TeamID</th> 
+                    <th>TeamMemberID</th> 
+                    <th>FName</th> 
+                    <th>PhoneNumber</th> 
+                    <th>District</th> 
+                    <th>Email</th> 
+                    <th>FoodAllergies</th> 
+                    <th>MedicalAllergies</th> 
+                    <th>REMOVE MEMBER</th>
+                </tr>
+
+                <tr>
+                    -tableArrayDeleteMember.forEach(function (element, index) {
+                            <div>
+                                <td>  #{element.TeamID}</td>
+                                <td>  #{element.TeamMemberID}</td>
+                                <td>  #{element.FName}</td>
+                                <td>  #{element.PhoneNumber}</td>
+                                <td>  #{element.District}</td>
+                                <td>  #{element.Email}</td>
+                                <td>  #{element.FoodAllergies}</td>
+                                <td>  #{element.MedicalAllergies}</td>
+                                <td><input id=#{index} type="Submit" name="RowForMemberToDelete" value=#{element.TeamMemberID}></input></td>
+                            </div>
+                    -});
+            </table>
+
+        </form>
+
+    </body>
+</html>

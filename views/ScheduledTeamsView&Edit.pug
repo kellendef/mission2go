@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Homepage</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/scheduledTeams.css
+    </head>
+    
+    <body>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#">Create Record</a>
+                    <ul class="dropdown">
+                        <li><a href="/createProject">Create a New Project</a></li>
+                        <li><a href="/createTeam">Create a new Team</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Register/Assign</a>
+                    <ul class="dropdown">
+                        <li><a href="/assignTeams">Assign a Team</a></li>
+                        <li><a href="/joinTeam" >Join a Team</a></li>
+                        <li><a href="/newAirport">Register or edit an Airport</a></li>
+                        <li><a href="/newCountry">Register or edit a Country</a></li>
+                        <li><a href="/newHotel">Register or edit a Hotel</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">View Records</a>
+                    <ul class ="dropdown">
+                        <li><a href="/allProjects">All Projects</a></li> 
+                        <li><a href="/allTeamDetails">All TeamDetails</a></li>
+                        <li><a href="/allTeams">All Teams</a></li> 
+                        <li><a href="/cancelled">Cancelled Teams</a></li>
+                        <li><a href="/funds">Expected Funds</a></li> 
+                        <li><a href="/MaximaTeams">Maxima Teams</a></li>
+                        <li><a href="/ppd">Projects Per District</a></li>
+                        <li><a href="/viewAirports">View all Airports</a></li>
+                        <li><a href="/viewCountries">View all Countries</a></li>
+                        <li><a href="/viewHotels">View all Hotels</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+ 
+        <h2>Welcome to Mission 2 Go</h2>
+        <br/>
+        <br/>
+            
+        
+        
+        
+        <form method = "GET" action ="logout">
+            <input type="Submit" value="Logout">      
+        </form>
+
+        <br/>
+        <form action = "GetIndex" method = "POST">
+            <table>
+                <tr>
+                    <th>TeamName</th> 
+                    <th>Country</th> 
+                    <th>Days</th> 
+                    <th>ArrivalDate</th> 
+                    <th>DepartDate</th> 
+                    <th>NumTeamMemb</th> 
+                    <th>ProjectID</th> 
+                    <th>TeamHost</th> 
+                    <th>ProjectMoney</th> 
+                    <th>SumOfUSD</th> 
+                    <th>Maxima</th> 
+                    <th>DELETE</th> 
+                </tr>
+
+                <tr>
+                    -tableArray.forEach(function (element, index) {
+                        <div>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.CountryName}</td>
+                            <td>  #{element.Days}</td>
+                            <td>  #{element.ArrivalDate}</td>
+                            <td>  #{element.DepartDate}</td>
+                            <td>  #{element.NumTeamMemb}</td>
+                            <td>  #{element.ProjectID}</td>
+                            <td>  #{element.FName}</td>
+                            <td>  #{element.ProjectMoney}</td>  
+                            <td>  #{element.SumOfUSD}</td>
+                            <td>  #{element.Maxima}</td>
+                            <td>  <input id=#{index} type="Submit" name="RowForDelete" value=#{index}></input></td>
+                        </div>
+                        </tr>
+                    -});
+
+            </table>
+            
+        </form>
+            
+
+    </body>
+</html> 

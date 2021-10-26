@@ -1,0 +1,95 @@
+html {
+    background: blue;
+    background: linear-gradient( to bottom, steelblue, palegoldenrod);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    font-family: 'Comic Sans MS';
+    margin-left: 38%;
+}
+
+nav {
+    font-family: 'Comic Sans MS';
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    background: teal;
+    color: palegoldenrod;
+    display: block;
+    float: left;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    padding: 10px 11px;
+}
+
+li a {
+    color: palegoldenrod;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 0.5rem;
+    left: 0;
+    display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+ul li ul li {
+    clear: both;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bolder;
+    margin: 0px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: palegoldenrod;
+}
+
+table {
+    font-family: 'Comic Sans MS';
+    border-collapse: collapse;
+}
+
+th {
+    font-weight: normal;
+    padding: 7px;
+}
+
+td {
+    font-family: 'Comic Sans MS';
+}
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>View Team Details</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Viewing all TeamDetails [AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently viewing all TeamDetails records: </h3>
+        
+        <form id="getTeamDetailsID" action="getTeamDetailsID" method="POST" name="getTeamDetailsID">
+            <table>
+                <tr>
+                    <th>TeamDetailsID</th> 
+                    <th>ArriveFlightNumber</th> 
+                    <th>ArriveDate</th> 
+                    <th>DepartDate</th> 
+                    <th>DepartAirline</th> 
+                    <th>DepartFlightNumber</th> 
+                    <th>ProjectID</th> 
+                    <th>TeamID</th> 
+                    <th>CountryID</th> 
+                    <th>Maxima</th> 
+                    <th>EDIT</th>  
+                </tr>
+                <tr>
+                    -AllTeamDetails.forEach(function (element, index) {
+                        <tr>
+                            <td>  #{element.TeamDetailsID}</td>
+                            <td>  #{element.ArriveFlightNumber}</td>
+                            <td>  #{element.ArriveDate}</td>
+                            <td>  #{element.DepartDate}</td>
+                            <td>  #{element.DepartAirline}</td>
+                            <td>  #{element.DepartFlightNumber}</td>
+                            <td>  #{element.ProjectID}</td>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.CountryID}</td>
+                            <td>  #{element.Maxima}</td>
+                            <td><input id=#{index} type="Submit" name="RowForEditTeamDetails" value=#{index}></input></td>
+                        </tr>
+                    -});
+            </table>
+        </form>
+
+    </body>
+</html>

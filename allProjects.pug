@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project Record Editor</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+   
+        <h2> Viewing all Projects [AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently viewing all project records: </h3>
+        <form id="getProjectID" action="getProjectID" method="POST" name="getProjectID">
+            <table>
+                <tr>
+                    <th>ProjectID</th> 
+                    <th>TeamID</th> 
+                    <th>LinkToWWsite</th> 
+                    <th>ProjectTypeID</th> 
+                    <th>DistrictID</th> 
+                    <th>CityName</th> 
+                    <th>ChurchName</th> 
+                    <th>PastorName</th> 
+                    <th>PastorPhone</th> 
+                    <th>ProjectDesc</th> 
+                    <th>ProjectPlans</th> 
+                    <th>ProjectCompleted</th> 
+                    <th>CountryID</th> 
+                    <th>EDIT</th>  
+                    <th>DELETE</th> 
+                </tr>
+                
+                
+                    -ProjectsViewArray.forEach(function (element, index) {
+                        <tr>
+                        <td> #{element.ProjectID}</td>
+                        <td> #{element.TeamID}</td>
+                        <td> #{element.LinkToWWsite}</td>
+                        <td> #{element.ProjectTypeID}</td>
+                        <td> #{element.DistrictID}</td>
+                        <td> #{element.CityName}</td>
+                        <td> #{element.ChurchName}</td>
+                        <td> #{element.PastorName}</td>
+                        <td> #{element.PastorPhone}</td>
+                        <td> #{element.ProjectDesc}</td>
+                        <td> #{element.ProjectPlans}</td>
+                        <td> #{element.ProjectCompleted}</td>
+                        <td> #{element.CountryID}</td>
+                        <td><input id= #{index} type="Submit" name="RowForEditProject" value= #{index}></input></td>
+                        <td><input id= #{index} type="Submit" name="RowForDeleteProject" value= #{index}></input></td>
+                        </tr>
+                    -});   
+            </table>
+            
+            <br>
+            <br>
+
+        </form>
+    </body>
+</html>

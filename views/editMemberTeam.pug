@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Member Team Assignment</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Select Member to Change Assignment(TEAM) [AUTHORIZED USERS ONLY] </h2>
+        <br />
+        <h3> Currently viewing all teams records: </h3>
+        <br />
+        <br />
+        <form id="editMemberAssign" action="editMemberAssign" method="POST" name="editMemberAssign">
+            <label for ="ttj">Select A Team: </label>
+                <select name = 'ttj' id = 'ttj'>
+                    -teamViewArray.forEach(function(element){ 
+                            <option value = #{element.TeamID}>#{element.TeamName}</option>
+                    -});
+                </select> 
+    
+            <br>
+            <br>
+            <input type="Submit" value="Edit">
+        
+        </form>
+    </body>
+</html>

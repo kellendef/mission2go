@@ -1,0 +1,58 @@
+﻿html {
+    background: blue;
+    background: linear-gradient( to bottom, steelblue, palegoldenrod);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    padding: 5px;
+    width: auto;
+    font-weight: bold;
+    color: #333;
+}
+
+a {
+    font-family: 'Comic Sans MS';
+    text-decoration: none;
+    text-align: center;
+    color: palegoldenrod;
+    display: inline;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 14px 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: palegoldenrod;
+}
+
+div {
+    margin-top: 11%; /*moves all 3 elements down*/
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Comic Sans MS';
+}
+
+form {
+    margin-top: 3%; /*brings the div down closer the headers, so there isn't so much space in between.
+                      Increase percentage to create more space between headers and form elements*/
+    margin-left: 37%; /*centers form elements, within inner div, on the webpage*/
+}
+
+label {
+    width: 160px; /*distance between labels and input boxes*/
+    display: inline-block; /*vertically aligns input boxes*/
+    text-align: right; /*aligns the label to the right, close to input boxes*/
+    font-family: 'Comic Sans MS';
+}
+
+input[type=submit] {
+    margin-left: 32.5%; /*increase percentage to move Sign In button right*/
+    cursor: pointer;
+}

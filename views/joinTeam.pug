@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Team Member Registration</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/memberReg.css
+    </head>
+
+    <body>
+        
+        <h2> Team Member Registration [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently Adding A New Member. Available Teams Are Listed Below: </h3>
+        
+        <table>
+            <tr>
+                <th>TeamID</th> 
+                <th>TeamName</th> 
+                <th>ChurchName</th> 
+                <th>District</th> 
+                <th>LeaderEmail</th> 
+                <th>LeaderName</th> 
+                <th>Partership</th> 
+                <th>index</th>
+            </tr>
+
+            <tr>
+                -teamJoinArray.forEach(function(element, index){ 
+                    <tr>
+                        <td>  #{element.TeamID}</td> 
+                        <td>  #{element.TeamName}</td>  
+                        <td>  #{element.ChurchName}</td>
+                        <td>  #{element.District}</td>
+                        <td>  #{element.LeaderEmail}</td>
+                        <td>  #{element.LeaderName}</td>
+                        <td>  #{element.Partership}</td>
+                    </tr>
+                -});
+        </table>
+        
+        <br>
+        <br>
+        <br />
+        <br />
+        <form id="joinATeam" action="joinATeam" method="POST" name="joinATeam">
+            <label for ="ttj">Select A Team: </label>
+                <select name = 'ttj' id = 'ttj'>
+                    -teamJoinArray.forEach(function(element,index){ 
+                            <option value = #{element.TeamID}>#{element.TeamName}</option>
+                    -});
+                </select> 
+            
+            <br>
+            <br />
+            <label for="NTMFName">Full Name:               </label>
+                <input id="NTMFName" type = "text" name = "NTMFName" required>
+        
+            <br>
+            <br />
+            <label for="NTMPhoneNumber">Phone (format: (##########)): </label>
+                <input id="NTMPhoneNumber" type = "text" name = "NTMPhoneNumber" required>
+            
+            <br>
+            <br />
+            <label for="NTMCountry">Country: </label>
+                    <select id="NTMCountry" name = "NTMCountry" required>
+                            <option value = 'United States'>United States</option>
+                            <option value = 'Canada'>Canada</option>
+                            <option value = 'Mexico'>Mexico</option>
+                            <option value = 'Nicaragua'>Nicaragua</option>
+                            <option value = 'Guatemala'>Guatemala</option>
+                            <option value = 'El Salvador'>El Salvador</option>
+                            <option value = 'Honduras'>Honduras</option>
+                            <option value = 'Argentina'>Argentina</option>
+                    </select>
+            
+            <br />
+            <br />
+            <label for="NTMDistrict">District Name:               </label>
+                <input id="NTMDistrict" type = "text" name = "NTMDistrict">
+            
+            <br />
+                <input type = "hidden" id="NTMRankingID" name="NTMRankingID" value = 0 required readonly>
+        
+            <br>
+            <br />
+            <label for="NTMPreviousProjects">Have you done a Project for this organization before?:</label>
+                <select id = "NTMPreviousProjects" name = "NTMPreviousProjects" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br>
+            <br />
+            <label for="NTMLastTrip">If so, provide an approvimate date, otherwise, leave this blank:               </label>
+                <input id="NTMLastTrip" type = "date" name = "NTMLastTrip">
+        
+            <br>
+            <br />
+            <label for="NTMSecondLanguage">Do you speak a second language well enough for basic conversation? if not, select [none]:</label>
+                <select id = "NTMSecondLanguage" name = "NTMSecondLanguage" required>
+                    <option value = 1>NONE</option>
+                    <option value = 2>Spanish</option>
+                    <option value = 3>Portuguese</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="NTMSkillsID">Skills (If more than one applies, Choose one at your discretion):               </label>
+                <select id = "NTMSkillsID" name = "NTMSkillsID">
+                    <option value = 0>NONE<option>
+                    <option value = 1>Team Host<option>
+                    <option value = 2>Truck Driver</option>
+                    <option value = 3>Bus Driver</option>
+                    <option value = 4>Translator</option>
+                    <option value = 5>Electritian</option>
+                    <option value = 6>Welder</option>
+                    <option value = 7>Block Layer</option>
+                    <option value = 8>Tool Driver</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="NTMTeamMemberTypeID">Team Leader Type?</label>
+                <select id = "NTMTeamMemberTypeID" name = "NTMTeamMemberTypeID">
+                    <option value = 0>NONE</option>
+                    <option value = 1>USA</option>
+                    <option value = 2>MAXIMA</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="NTMTeamLeader">Team Leader?</label>
+                <select id = "NTMTeamLeader" name = "NTMTeamLeader">
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+                <input type = "hidden" id="TeamDetailsID" name="TeamDetailsID" value = 0 required readonly>
+                <input type = "hidden" id="TeamID" name="TeamID" value = 0 required readonly>
+            
+            <br />
+            <br />
+                <label for="NTMMale">Are you Male?:</label>
+                    <select id = "NTMMale" name = "NTMMale" required>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+            <br>
+            <br />
+            <label for="NTMFemale">Are you Female?:</label>
+                <select id = "NTMFemale" name = "NTMFemale" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br>
+            <br />
+            <label for="NTMSpouseOnTeam">Is your spouse on the same team as you? (if N/A, select no):</label>
+                <select id = "NTMSpouseOnTeam" name = "NTMSpouseOnTeam" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="NTMPassPortExp">Passport Expiration Date:             </label>
+                <input id="NTMPassPortExp" type = "date" name = "NTMPassPortExp" required>
+        
+            <br>
+            <br />
+            <h4> Please leave the next 2 fields blank if you have no allergies </h4>
+            <label for="NTMFoodAllergies">Please list all food allergies you have in a comma seperated list:               </label>
+                <input id="NTMFoodAllergies" type = "text" name = "NTMFoodAllergies">
+            
+            <br>
+            <br />
+            <label for="NTMMedicalAllergies">Please list any medical allergies you have (e.g. penicillin), in a comma seperated list:               </label>
+                <input id="NTMMedicalAllergies" type = "text" name = "NTMMedicalAllergies">
+        
+            <br>
+            <br />
+            <label for="NTMDPI">DPI:               </label>
+                <input id="NTMDPI" type = "text" name = "NTMDPI">
+            
+            <br>
+            <br />
+            <label for="NTMEmail">Email Address:               </label>
+                <input id="NTMEmail" type = "text" name = "NTMEmail" required>
+        
+            <br>
+            <br />
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

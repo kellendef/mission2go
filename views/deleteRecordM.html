@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Records</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Delete a Record [AUTHORIZED USERS ONLY. PLEASE ENSURE DATA IS CORRECT BEFORE SUBMITTING!] </h2>
+        <br>
+        <h3> Currently deleting the following record: </h3>
+
+        <table>
+            <tr>
+                <th>TeamDetailsID</th> 
+                <th>TeamID</th> 
+                <th>ProjectID</th> 
+                <th>TeamName</th>
+            </tr>
+
+            <tr>
+                -tableArrayDelete.forEach(function(element){
+                        <tr>
+                            <td>  #{element.TeamDetailsID}</td>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.ProjectID}</td>
+                            <td>  #{element.TeamName}</td>
+                        </tr>
+                -});
+        </table>
+        <br>
+        <br>
+        <form id="deleteRecordM" action="deleteRecordM" method="POST" name="deleteRecordM">
+            <input type = "hidden" id="tdfd" name="tdfd" required readonly>
+                -tableArrayDelete.forEach(function(element){
+                            document.getElementById('TeamDetailsID').value=element.TeamDetailsID
+                -});
+                <br>
+                <br>
+                <input type="Submit" value="Delete Record">
+        </form>
+
+    </body>
+</html>

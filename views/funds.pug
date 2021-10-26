@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Expected Funds</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Expected Funds [AUTHORIZED USERS ONLY] </h2>
+        <br />
+        <h3> Currently viewing ExpectedFunds: </h3>
+        
+        <form id="EF" action="EF" method="POST" name="EF">
+            <table>
+                <tr>
+                    <th>TeamDetailsID</th> 
+                    <th>CancelTeam</th> 
+                    <th>ProjectMoney</th> 
+                    <th>ArriveDate</th> 
+                    <th>TeamName</th>
+                    <th>EDIT</th>
+                </tr>
+
+                <tr>
+                    -tableArrayFunds.forEach(function(element, index){
+                            <tr>
+                                <td>  #{element.TeamDetailsID}</td>
+                                <td>  #{element.CancelTeam}</td>
+                                <td>  #{element.ProjectMoney}</td>
+                                <td>  #{element.ArriveDate}</td>
+                                <td>  #{element.TeamName}</td>
+                                <td><input id=#{index} type="Submit" name="RowForEditEF" value=#{index}></input></td>
+                            </tr> 
+                    -});
+            </table>
+        </form>    
+    </body>
+</html>

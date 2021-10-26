@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Meals</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="ScheduledTeamsView&Edit.html">Home</a>
+        </nav>
+
+        <h2> Delete Meal Record [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently deleting the following Meal: </h3>
+
+        <form id="delete-Meals" action="delete-Meals" method="POST" name="delete-Meals">
+            <table>
+                <tr>
+                    <th>MealID</th> 
+                    <th>MealDesc</th> 
+                    <th>DaysForThisMeal</th> 
+                    <th>MealDateStart</th> 
+                    <th>MealDateStop</th> 
+                    <th>MealCost</th> 
+                    <th>HowManyEating</th> 
+                    <th>TeamDetailsID</th>
+                </tr>
+
+                <tr>
+                    -tableArrayDeleteMeal.forEach(function (element) {
+                            <tr>
+                                <td>  #{element.MealID}</td>
+                                <td>  #{element.MealDesc}</td>
+                                <td>  #{element.DaysForThisMeal}</td> 
+                                <td>  #{element.MealDateStart}</td>  
+                                <td>  #{element.MealDateStop}</td>
+                                <td>  #{element.MealCost}</td>
+                                <td>  #{element.HowManyEating}</td>
+                                <td>  #{element.TeamDetailsID}</td>
+                            </tr>
+                    -});
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <input type="Submit" value="Delete Meal">
+        </form>
+    </body>
+</html>

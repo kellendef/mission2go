@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Teams</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster4.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        <h2> Creating New Team[AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently Creating a New Team: </h3>
+        <br>
+        <br />
+        <form id="create-Team" action="create-Team" method="POST" name="create-Team">
+            <label for="newTeamName">New Team Name:               </label>
+                <input id="newTeamName" type = "text" name = "newTeamName" required>
+
+            <br>
+            <br />
+            <label for="newChurchName">New Church Name:               </label>
+                <input id="newChurchName" type = "text" name = "newChurchName" required>
+            
+            <br>
+            <br />
+            <label for="newDistrict">New District:               </label>
+                <input id="newDistrict" type = "text" name = "newDistrict" required>
+            
+            <br>
+            <br />
+            <label for="newLeaderEmail">New Leader Email:               </label>
+                <input id="newLeaderEmail" type = "text" name = "newLeaderEmail" required>
+            
+            <br>
+            <br />
+            <label for="newLeaderName">New Leader Name:               </label>
+                <input id="newLeaderName" type = "text" name = "newLeaderName" required>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="Submit" value="Save Changes">
+        </form>
+        
+    </body>
+</html>

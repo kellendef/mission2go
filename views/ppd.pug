@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PBD</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> View PBD Records [AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently viewing Projects By District: (View Only) </h3>
+        
+        <form id="PBD" action="PBD" method="GET" name="PBD">
+            <table>
+                <tr>
+                    <th>DistrictName</th> 
+                    <th>ArriveDate</th> 
+                    <th class="auto-style1">CountryName</th>
+                </tr>
+
+                <tr>
+                    -tableArrayPBD.forEach(function(element, index){
+                        <tr>
+                            <td>  #{element.DistrictName}</td>
+                            <td>  #{element.ArriveDate}</td>
+                            <td>  #{element.CountryName}</td>
+                        </tr>
+                    -});
+            </table>
+            <br>
+            <br>
+        </form>
+    </body>
+</html>

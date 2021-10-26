@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cancelled Teams Record Editor</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Edit Cancelled Teams' Records [AUTHORIZED USERS ONLY] </h2>
+        <br />
+        <h3> Currently viewing all cancelled teams' records: </h3>
+
+        <form id="cancelledTeams" action="cancelledTeams" method="POST" name="cancelledTeams">
+            <table>
+                <tr>
+                    <th>TeamID</th> 
+                    <th>TeamName</th> 
+                    <th>ChurchName</th> 
+                    <th>District</th> 
+                    <th>LeaderEmail</th> 
+                    <th>LeaderName</th> 
+                    <th>Partnership</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr>
+
+                <tr>
+                    -tableArrayCancelledTeams.forEach(function(element, index){
+                        <tr>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.ChurchName}</td>
+                            <td>  #{element.District}</td>
+                            <td>  #{element.LeaderEmail}</td>
+                            <td>  #{element.LeaderName}</td>
+                            <td>  #{element.Partnership}</td>
+                            <td><input id=#{index} type="Submit" name="RowForEditCancelledTeam" value=#{index}></input></td>
+                            <td><input id=#{index} type="Submit" name="RowForDeleteCancelledTeam" value=#{index}></input></td>
+                        </tr> 
+                    -});
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Project Editor</title>
+        <meta charset="utf-8"/>
+        style
+             include ./CSS/cluster3.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        
+        <h2> Edit Project Records [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently editing the following Project: </h3>
+ 
+        <table>
+            <tr>
+                <th>ProjectID</th> 
+                <th>NewWWCoor</th> 
+                <th>DateRec</th> 
+                <th>LinkToWWsite</th> 
+                <th>UserPermission</th> 
+                <th>ProjectTypeID</th> 
+                <th>DistrictID</th> 
+                <th>City</th> 
+                <th>Pastor</th> 
+                <th>PastorPhone</th> 
+                <th>LocationLink</th> 
+                <th>DistanceFromDistrictOff</th> 
+                <th>DistrictBudgetCurrent</th> 
+                <th>DistrictBudgetLast</th> 
+                <th>FEMcurrent</th> 
+                <th>FEMlast</th> 
+                <th>DateOrganized</th> 
+                <th>MembersLast</th> 
+                <th>MembersCurrent</th> 
+                <th>AvgAttendanceLast</th> 
+                <th>AvgAttendanceCurr</th> 
+                <th>ProjectDesc</th> 
+                <th>TempleCapacity</th> 
+                <th>RoofWidth</th> 
+                <th>RoofLength</th> 
+                <th>BriefDesc</th> 
+                <th>PropertyWidth</th> 
+                <th>PropertyLength</th> 
+                <th>Photos</th> 
+                <th>Digital</th> 
+                <th>LotLayout</th> 
+                <th>ProjectPlans</th> 
+                <th>MoneyRaised</th> 
+                <th>MoneyInvested</th> 
+                <th>Money12Months</th> 
+                <th>ProjectNeed</th> 
+                <th>TitleToProperty</th> 
+                <th>PropertyDeededToChurch</th> 
+                <th>BuildingPermitNeeded</th> 
+                <th>BuildingPermitApproved</th> 
+                <th>PastorApproved</th> 
+                <th>ChurchBoardApproved</th> 
+                <th>TreasureApproved</th> 
+                <th>TreasureApprovedDate</th> 
+                <th>SuperApproved</th> 
+                <th>SuperApprovedDate</th> 
+                <th>DistrictSecretaryApproval</th> 
+                <th>DistrictSecretaryApprovalDate</th> 
+                <th>DistrictPriority</th> 
+                <th>TyTapproved</th> 
+                <th>TyTPriority</th> 
+                <th>ProjectCompleted</th> 
+                <th>NewWwLink</th> 
+                <th>PhotoLocation</th> 
+                <th>PermitStart</th> 
+                <th>PermitEnd</th> 
+                <th>CountryID</th>
+            </tr>
+
+            <tr>
+            -tableArrayEditProject.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.ProjectID}</td>
+                        <td>  #{element.WWCoorID}</td>
+                        <td>  #{element.newDateReceived}</td> 
+                        <td>  #{element.LinkToWWsite}</td>  
+                        <td>  #{element.UserPermission}</td>
+                        <td>  #{element.ProjectTypeID}</td>
+                        <td>  #{element.DistrictID}</td>
+                        <td>  #{element.CityName}</td>
+                        <td>  #{element.PastorName}</td>
+                        <td>  #{element.PastorPhone}</td>
+                        <td>  #{element.LocationLink}</td>  
+                        <td>  #{element.DistanceFromDistrictOff}</td>
+                        <td>  #{element.DistrictBudgetCurrent}</td>
+                        <td>  #{element.DistrictBudgetLast}</td>
+                        <td>  #{element.FEMcurrent}</td>
+                        <td>  #{element.FEMlast}</td>
+                        <td>  #{element.DateOrganized}</td>
+                        <td>  #{element.MembersLast}</td>
+                        <td>  #{element.MembersCurrent}</td> 
+                        <td>  #{element.AvgAttendanceLast}</td>  
+                        <td>  #{element.AvgAttendanceCurrent}</td>
+                        <td>  #{element.ProjectDesc}</td>
+                        <td>  #{element.TempleCapacity}</td>
+                        <td>  #{element.RoofWidth}</td>
+                        <td>  #{element.RoofLength}</td>
+                        <td>  #{element.BriefDescriptionConst}</td>
+                        <td>  #{element.PropertyWidth}</td>
+                        <td>  #{element.PropertyLength}</td> 
+                        <td>  #{element.Photos}</td>  
+                        <td>  #{element.Digital}</td>
+                        <td>  #{element.LotLayout}</td>
+                        <td>  #{element.ProjectPlans}</td>
+                        <td>  #{element.MoneyRaised}</td>
+                        <td>  #{element.MoneyInvested}</td>
+                        <td>  #{element.Money12Months}</td>
+                        <td>  #{element.ProjectNeed}</td>
+                        <td>  #{element.TitleToProperty}</td> 
+                        <td>  #{element.PropertyDeededToChurch}</td>  
+                        <td>  #{element.BuildingPermitNeeded}</td>
+                        <td>  #{element.BuildingPermitApproved}</td>
+                        <td>  #{element.PastorApproved}</td>
+                        <td>  #{element.ChurchBoardApproved}</td>
+                        <td>  #{element.TreasureApproved}</td>
+                        <td>  #{element.TreasureApprovedDate}</td>
+                        <td>  #{element.SuperApproval}</td>
+                        <td>  #{element.SuperApprovalDate}</td> 
+                        <td>  #{element.DistrictSecretaryApproval}</td>  
+                        <td>  #{element.DistrictTreasureApprovalDate}</td>
+                        <td>  #{element.DistrictPriority}</td>
+                        <td>  #{element.TyTapproved}</td>
+                        <td>  #{element.TyTPriority}</td>
+                        <td>  #{element.ProjectCompleted}</td>
+                        <td>  #{element.WwLink}</td>
+                        <td>  #{element.PhotoLocation}</td>
+                        <td>  #{element.PermitStart}</td>
+                        <td>  #{element.newPermitEnd}</td>
+                        <td>  #{element.CountryID}</td>
+                        <td>  #{element.ChurchID}</td>
+                    </tr>
+        -});
+        </table>
+        <br>
+        <br>  
+        <form id="edit-Project" action="edit-Project" method="POST" name="edit-Project">
+            <input type = "hidden" id="newProjectID" name="newProjectID" required readonly>
+                -tableArrayEditProject.forEach(function(element){
+                            document.getElementById('ProjectID').value=element.ProjectID
+                -});
+
+            <br />
+            <br>
+            <label for="newWWCoorID">New WW Coordinator:               </label>
+                <input id="newWWCoorID" type = "number" name = "newWWCoorID">
+        
+            <br>
+            <br />
+            <label for="newDateReceived">New Date Recieved:               </label>
+                <input id="newDateReceived" type = "date" name = "newDateReceived">
+        
+            <br>
+            <br />
+            <label for="newLinkToWWsite">New Website Link:               </label>
+                <input id="newLinkToWWsite" type = "text" name = "newLinkToWWsite">
+            
+            <br>
+            <br />
+            <label for="newUserPermission">New User Permission:               </label>
+                <input id="newUserPermission" type = "text" name = "newUserPermission">
+        
+            <br>
+            <br />
+            <label for="newProjectTypeID">New Project Type ID?:             </label>
+                <select id="newProjectTypeID" name = "newProjectTypeID">
+                    <option value = 0>None Provided</option>
+                    <option value = 1>Templo</option>
+                    <option value = 2>Casa Pastoral</option>
+                    <option value = 3>Aulas De ED</option>
+                    <option value = 4>Casa Districal</option>
+                    <option value = 5>Centro Districal</option>
+                    <option value = 6>Techo</option>
+                    <option value = 7>NazaGol</option>
+                    <option value = 10>Extreme Team</option>
+                    <option value = 11>Medical Team</option>
+                    <option value = 12>Leadership Training</option>
+                    <option value = 13>Seminary Maintanence</option>
+                    <option value = 14>Water Filters</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newDistrictID">New District ID:               </label>
+                <select id="newDistrictID" name = "newDistrictID">
+                    <option value = 0>None Provided</option>
+                    <option value = 1>Central (Guatemala)</option>
+                    <option value = 38>Franja Occidental Guatemala (Guatemala)</option>
+                    <option value = 39>Nor Occidente (Honduras)</option>
+                    <option value = 40>Centro Sur-Oriente (Honduras)</option>
+                    <option value = 41>Sureste De Nicaragua</option>
+                    <option value = 42>Franja Central (Guatemala)</option>
+                    <option value = 43>Sur Occidental de Peten (Guatemala)</option>
+                    <option value = 44>Central (El Salvador)</option>
+                    <option value = 45>Norte De Nicaragua</option>
+                    <option value = 46>Noroccidente (Guatemala)</option>
+                    <option value = 47>Verapaz del Norte (Guatemala)</option>
+                    <option value = 48>Norte (Guatemala)</option>
+                    <option value = 49>Verapaz Oreiental (Guatemala)</option>
+                    <option value = 50>Suroriente (Guatemala)</option>
+                    <option value = 51>Atlantico (Guatemala)</option>
+                    <option value = 52>Franja Oriental (Guatemala)</option>
+                    <option value = 53>Norte de Coban (Guatemala)</option>
+                    <option value = 54>Occidente (Guatemala)</option>
+                    <option value = 56>Occidente (El Salvador)</option>
+                    <option value = 57>Baja Verapaz (Guatemala)</option>
+                    <option value = 58>Sur (Nicaragua)</option>
+                    <option value = 59>Oriente (El Salvadoe)</option>
+                    <option value = 60>Verpaz del Sur (Guatemala)</option>
+                    <option value = 61>Central (Nicaragua)</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newCityName">New City:               </label>
+                <input id="newCityName" type = "text" name = "newCityName">
+        
+            <br>
+            <br />
+            <label for="newPastorName">New Pastor Name:               </label>
+                <input id="newPastorName" type = "text" name = "newPastorName">
+            
+            <br>
+            <br />
+            <label for="newPastorPhone">New Pastor Phone:               </label>
+                <input id="newPastorPhone" type = "text" name = "newPastorPhone">
+        
+            <br>
+            <br />
+            <label for="newLocationLink">New Location Link:               </label>
+                <input id="newLocationLink" type = "text" name = "newLocationLink">
+            
+            <br>
+            <br />
+            <label for="newDistanceFromDistrictOff">New Distance From District Office:	      </label>
+                <input id="newDistanceFromDistrictOff" type = "number" name = "newDistanceFromDistrictOff">
+            
+            <br>
+            <br />
+            <label for="newDistrictBudgetCurrent">New District Budget Current:      </label>
+                <input id="newDistrictBudgetCurrent" type = "number" name = "newDistrictBudgetCurrent">
+        
+            <br>
+            <br />
+            <label for="newDistrictBudgetLast	">New District Budget Last:               </label>
+                <input id="newDistrictBudgetLast	" type = "number" name = "newDistrictBudgetLast	">
+            
+            <br>
+            <br />
+            <label for="newFEMCurrent">New FEM Current:               </label>
+                <input id="NewFEMCurrent" type = "number" name = "NewFEMCurrent">
+            
+            <br>
+            <br />
+            <label for="newFEMLast">New FEM Last:               </label>
+                <input id="newFEMLast" type = "number" name = "newFEMLast">
+        
+            <br>
+            <br />
+            <label for="newDateOrganized">New Date Organized:              </label>
+                <input id="newDateOrganized" type = "date" name = "newDateOrganized">
+            
+            <br>
+            <br />
+            <label for="newMembersLast">New Members Last:              </label>
+                <input id="newMembersLast" type = "number" name = "newMembersLast">
+        
+            <br>
+            <br />
+            <label for="newMembersCurrent">New Members Current:               </label>
+                <input id="newMembersCurrent" type = "number" name = "newMembersCurrent">
+            
+            <br>
+            <br />
+            <label for="newAvgAttendanceLast	">New Avg Attendance Last:	             </label>
+                <input id="newAvgAttendanceLast	" type = "number" name = "newAvgAttendanceLast">
+            
+            <br>
+            <br />
+            <label for="newAvgAttendanceCurrent	">New AvgAttendance Current	               </label>
+                <input id="newAvgAttendanceCurrent	" type = "number" name = "newAvgAttendanceCurrent	">
+            
+            <br>
+            <br />
+            <label for="newProjectDesc">New Project Desc:	               </label>
+                <input id="newProjectDesc" type = "text" name = "newProjectDesc	">
+            
+            <br>
+            <br />
+            <label for="newTempleCapacity">New Temple Capacity:	               </label>
+                <input id="newTempleCapacity" type = "number" name = "newTempleCapacity">
+            
+            <br>
+            <br />
+            <label for="newRoofWidth">New Roof Width:	               </label>
+                <input id="newRoofWidth" type = "number" name = "newRoofWidth">
+        
+            <br>
+            <br />
+            <label for="newRoofLength">New Roof Length:	               </label>
+                <input id="newRoofLength" type = "number" name = "newRoofLength">
+            
+            <br>
+            <br />
+            <label for="newBriefDescriptionConst">New Brief Desc Const:	               </label>
+                <input id="newBriefDescriptionConst" type = "text" name = "newBriefDescriptionConst">
+        
+            <br>
+            <br />
+            <label for="newPropertyWidth">New Property Width:              </label>
+                <input id="newPropertyWidth" type = "number" name = "newPropertyWidth">
+        
+            <br>
+            <br />
+            <label for="newPropertyLength">New Property Length:	               </label>
+                <input id="newPropertyLength" type = "number" name = "newPropertyLength">
+            
+            <br>
+            <br />
+            <label for="newPhotos">New Photos:	               </label>
+                <select id = "newPhotos" name = "newPhotos">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newDigital">New Digital:	               </label>
+                <select id = "newDigital" name = "newDigital">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newLotLayout">New Lot Layout:	               </label>
+                <select id = "newLotLayout" name = "newLotLayout">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br>
+            <br />
+            <label for="newProjectPlans">New Project Plans:	               </label>
+                <select id = "newProjectPlans" name = "newProjectPlans">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newMoneyRaised">New Money Raised:	               </label>
+                <input id="newMoneyRaised" type = "number" name = "newMoneyRaised">
+        
+            <br>
+            <br />
+            <label for="newMoneyInvested">New Money Invested:	               </label>
+                <input id="newMoneyInvested" type = "number" name = "newMoneyInvested">
+        
+            <br>
+            <br />
+            <label for="newMoney12Months">New Money 12 Months:	               </label>
+                <input id="newMoney12Months" type = "number" name = "newMoney12Months">
+            
+            <br>
+            <br />
+            <label for="newProjectNeed">New Project Need:	               </label>
+                <input id="newProjectNeed" type = "text" name = "newProjectNeed">
+        
+            <br>
+            <br />
+            <label for="newTitleToProperty">New Title to Property:	               </label>
+                <select id = "newTitleToProperty" name = "newTitleToProperty">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newPropertyDeededToChurch">New Property Deed to Church:	               </label>
+                <select id = "newPropertyDeededToChurch" name = "newPropertyDeededToChurch">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newBuildingPermitNeeded">New Building Permit Needed:	               </label>
+                <select id = "newBuildingPermitNeeded" name = "newBuildingPermitNeeded">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newBuildingPermitApproved">New Building Permit Approved:	               </label>
+                <select id = "newBuildingPermitApproved" name = "newBuildingPermitApproved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newPastorApproved">New Pastor Approved:	               </label>
+                <select id = "newPastorApproved" name = "newPastorApproved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newChurchBoardApproved">New Church Board Approved:	               </label>
+                <select id = "newChurchBoardApproved" name = "newChurchBoardApproved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newTreasureApproved">New Treasure Approved:	               </label>
+                <select id = "newTreasureApproved" name = "newTreasureApproved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newTreasureApprovedDate">New Treasure Approved Date:	               </label>
+                <input id="newTreasureApprovedDate" type = "date" name = "newTreasureApprovedDate">
+        
+            <br>
+            <br />
+            <label for="newSuperApproval">New Super Approval:	               </label>
+                <select id = "newSuperApproval" name = "newSuperApproval">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newSuperApprovalDate">New Super Approval Date:	               </label>
+                <input id="newSuperApprovalDate" type = "date" name = "newSuperApprovalDate">
+            
+            <br>
+            <br />
+            <label for="newDistrictSecretaryApproval">New District Secretary Approval:	               </label>
+                <select id = "newDistrictSecretaryApproval" name = "newDistrictSecretaryApproval">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newDistrictTreasureApprovalDate">New District Treasure Approval Date:	               </label>
+                <input id="newDistrictTreasureApprovalDate" type = "date" name = "newDistrictTresureApprovalDate">
+            
+            <br>
+            <br />
+            <label for="newDistrictPriority">New District Priority:	               </label>
+                <select id = "newDistrictPriority" name = "newDistrictPriority">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newTyTapproved">New TyTapproved:	               </label>
+                <select id = "newTyTapproved" name = "newTyTapproved">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newTyTPriority">New TyTPriority:	               </label>
+                <input id="newTyTPriority" type = "number" name = "newTyTPriority">
+                <select id = "newTyTPriority" name = "newTyTPriority">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newProjectCompleted">New Project Completed:	               </label>
+                <select id = "newProjectCompleted" name = "newProjectCompleted">
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newWWLink">New WW Link:	               </label>
+                <input id="newWWLink" type = "text" name = "newWWLink">
+            
+            <br>
+            <br />
+            <label for="newPhotoLocation">New Photo Location:	               </label>
+                <input id="newPhotoLocation" type = "text" name = "newPhotoLocation">
+        
+            <br>
+            <br />
+            <label for="newPermitStart">New Permit Start:	               </label>
+                <input id="newPermitStart" type = "date" name = "newPermitStart">
+        
+            <br>
+            <br />
+            <label for="newPermitEnd">New Permit End:	               </label>
+                <input id="newPermitEnd" type = "date" name = "newPermitEnd">
+        
+            <br>
+            <br />
+            <label for="newCountryID">New CountryID:             </label>
+                <select id="newCountryID" name = "newCountryID">
+                    <option value = 1>Guatemala</option>
+                    <option value = 2>El Salvador</option>
+                    <option value = 3>Honduras</option>
+                    <option value = 4>Nicaragua</option>
+                </select>
+
+            <br />
+            <br />
+            <label for="newChurchID">Church ID:	               </label>
+                <select id="newChurchID" name = "newChurchID">
+                    <option value = 0>NONE</option>
+                    <option value = 1>MiCasa</option>
+                    <option value = 2>John</option>
+                </select>
+        
+            <br>
+            <br />
+            <input type="Submit" value="Save Changes">
+        </form>
+
+    </body>
+</html>

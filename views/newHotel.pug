@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>New Hotel</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster3.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Edit Hotel [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently registering a new Hotel: </h3>
+          
+        <form id="new-Hotel" action="new-Hotel" method="POST" name="new-Hotel">
+            <br>
+            <br />
+            <label for="newHotelName">Hotel Name:               </label>
+                <input id="newHotelName" type = "text" name = "newHotelName" required>
+            
+            <br>
+            <br />
+            <label for="newHotelCountry">Hotel Country:               </label>
+                <select name = 'hc' id = 'hc'>
+                    -tableArrayChooseCountry.forEach(function(element,index){ 
+                            <option value = #{element.CountryID}> #{element.CountryName}</option>
+                    -}); 
+                </select> 
+        
+            <br>
+            <br />
+            <label for="RandR">R and R:               </label>
+                <input id="RandR" type = "number" name = "RandR">
+            
+            <br>
+            <br />
+            <label for="Comments">Hotel Comments:               </label>
+                <input id="Comments" type = "text" name = "Comments">
+            
+            <br>
+            <br />
+            <label for="PhoneNum">Phone Number:               </label>
+                <input id="PhoneNum" type = "text" name = "PhoneNum" required>
+            
+            <br>
+            <br />
+            <label for="WiFi">WiFi:                 </label>
+                <select id = "WiFi" name = "WiFi" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br>
+            <br />
+            <label for="AirCond">Air Conditioning:                 </label>
+                <select id = "AirCond" name = "AirCond" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="Pool">Pool:                 </label>
+                <select id = "Pool" name = "Pool" required>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="MapLoc">MapLoc:               </label>
+                <input id="MapLoc" type = "text" name = "MapLoc">
+            
+            <br>
+            <br />
+            <label for="city">City:               </label>
+                <input id="City" type = "text" name = "City" required>
+            
+            <br>
+            <br />
+            <label for="LastUsed">Last Used (if n/a leave blank):               </label>
+                <input id="LastUsed" type = "date" name = "LastUsed">
+            
+            <br>
+            <br />
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

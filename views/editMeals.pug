@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Meals Editior</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster3.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+        
+        <h2> Edit Meals [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently editing the following Meal: </h3>
+
+        <table>
+            <tr>
+                <th>MealID</th> 
+                <th>MealDesc</th> 
+                <th>DaysForThisMeal</th> 
+                <th>MealDateStart</th> 
+                <th>MealDateStop</th> 
+                <th>MealCost</th> 
+                <th>HowManyEating</th> 
+                <th>TeamDetailsID</th>
+            </tr>
+
+            <tr>
+                -tableArrayEditMeals.forEach(function(element){ 
+                        <tr>
+                            <td>  #{element.MealID}</td>
+                            <td>  #{element.MealDesc}</td>
+                            <td>  #{element.DaysForThisMeal}</td> 
+                            <td>  #{element.MealDateStart}</td>  
+                            <td>  #{element.MealDateStop}</td>
+                            <td>  #{element.MealCost}</td>
+                            <td>  #{element.HowManyEating}</td>
+                            <td>  #{element.TeamDetailsID}</td>
+                        </tr>
+                -});
+        </table>
+        <br>
+        <br> 
+        <br />
+        <form id="edit-Meals" action="edit-Meals" method="POST" name="edit-Meals">
+                <input type = "hidden" id="newMeal" name="newMeal" required readonly>
+                    -tableArrayEditMeals.forEach(function(element){
+                            document.getElementById('MealID').value=element.MealID
+                    -});
+            
+            <br>
+            <br />
+            <label for="newMealDesc">Meal Description:               </label>
+                <input id="newMealDesc" type = "text" name = "newMealDesc">
+            
+            <br>
+            <br />
+            <label for="newMealDateStart">MealDateStart:               </label>
+                <input id="newMealDateStart" type = "date" name = "newMealDateStart">
+            
+            <br>
+            <br />
+            <label for="newMealDateStop">Meal Date Stop:               </label>
+                <input id="newMealDateStop" type = "date" name = "newMealDateStop">
+            
+            <br>
+            <br />
+            <label for="newMealCost">Meal Cost:               </label>
+                <input id="newMealCost" type = "number" name = "newMealCost">
+            
+            <br>
+            <br />
+            <label for="newHowManyEating">How Many Eating:           </label>
+                <input id="newHowManyEating" type = "text" name = "newHowManyEating">
+            
+            <br />
+            <br>
+            <input type="Submit" value="Save Changes">
+        </form>
+
+    </body>
+</html>

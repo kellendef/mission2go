@@ -1,0 +1,56 @@
+html {
+    background: blue;
+    background: linear-gradient( to bottom, steelblue, palegoldenrod);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+div.capsule { /*div that incases the 2 header elements and inner div element*/
+    margin-top: 15%; /*moves all 3 elements down*/
+}
+
+h1, h3 {
+    margin-right: 29%; /*increase percentage to move left*/
+    text-align: center; /*centers the headers*/
+    font-family: 'Comic Sans MS';
+}
+
+div {
+    margin-top: 3%; /*brings the div down closer the headers, so there isn't so much space in between.
+                      Increase percentage to create more space between headers and form elements*/
+    margin-left: 22%; /*centers form elements, within inner div, on the webpage*/
+}
+
+label {
+    width: 80px; /*distance between labels and input boxes*/
+    display: inline-block; /*vertically aligns input boxes*/
+    text-align: right; /*aligns the label to the right, close to input boxes*/
+    font-family: 'Comic Sans MS';
+}
+
+input[type=submit] {
+    margin-left: 25%; /*increase percentage to move Sign In button right*/
+    cursor: pointer;
+}
+
+a {
+    margin-left: 21%;
+    font-family: 'Comic Sans MS';
+    font-size: 0.92em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: navy;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}

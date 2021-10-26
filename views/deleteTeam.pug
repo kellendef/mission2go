@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Team</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/delete.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Delete Team [AUTHORIZED USERS ONLY. PLEASE ENSURE DATA IS CORRECT BEFORE SUBMITTING!] </h2>
+        <br>
+        <h3> Currently deleting the following Team: </h3>
+
+        <table>
+            <tr>
+                <th>TeamID</th> 
+                <th>TeamName</th> 
+                <th>ChurchName</th> 
+                <th>District</th> 
+                <th>LeaderEmail</th> 
+                <th>LeaderName</th> 
+            </tr>
+
+            <tr>
+                -teamViewArrayDelete.forEach(function(element){
+                        <tr>
+                            <td>  #{element.TeamID}</td>
+                            <td>  #{element.TeamName}</td>
+                            <td>  #{element.ChurchName}</td>
+                            <td>  #{element.District}</td>
+                            <td>  #{element.LeaderEmail}</td>
+                            <td>  #{element.LeaderName}</td>
+                        </tr>
+                -});
+            </table>
+            <br>
+            <br>
+            <form id="team-delete" action="Team-delete" method="POST" name="team-delete">
+                <input type = "hidden" id="newTeamID" name="newTeamID" required readonly>
+                    -teamViewArrayDelete.forEach(function(element){
+                            document.getElementById('TeamID').value=element.TeamID
+                    -});
+                    <br>
+                    <br>
+                
+                    <input type="Submit" value="Delete Team">
+            </form>
+            <br>
+            <br>
+    </body>
+</html>

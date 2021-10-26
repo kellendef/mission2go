@@ -1,0 +1,242 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>TeamDetails Editor</title>
+        <meta charset="utf-8"/>
+        style
+             include ./CSS/cluster3.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Edit TeamDetails [AUTHORIZED USERS ONLY] </h2>
+        <br /> 
+        <h3> Currently editing the following Team Details: </h3>
+        
+        <table>
+            <tr>
+                <th>TeamDetailsID</th> 
+                <th>TotalDailyFunds</th> 
+                <th>ArriveFlightNumber</th> 
+                <th>ArriveDate</th> 
+                <th>DepartDate</th> 
+                <th>DepartAirline</th> 
+                <th>DepartFlightNumber</th> 
+                <th>ProjectID</th>  
+                <th>TeamID</th> 
+                <th>DistanceToRR</th> 
+                <th>DistanceToProject</th> 
+                <th>HotelID</th> 
+                <th>CountryID</th> 
+                <th>AirportID</th> 
+                <th>TeamRegistration</th> 
+                <th>Insurance</th> 
+                <th>Maxima</th> 
+                <th>ProjectMoney</th> 
+                <th>PartnershipID</th> 
+                <th>TeamPartnerProfileID</th> 
+                <th>TeamHost</th> 
+                <th>CulBroker</th> 
+                <th>TruckDriver</th> 
+                <th>BusDriver</th> 
+                <th>Translator</th> 
+                <th>StructureDelivery</th> 
+                <th>CancelTeam</th> 
+                <th>ProjectFundsRecieved</th>
+            </tr>
+
+            <tr>
+            -tableArrayEditTeamDetails.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.TeamDetailsID}</td>
+                        <td>  #{element.TotalDailyFunds}</td>
+                        <td>  #{element.ArriveFlightNumber}</td> 
+                        <td>  #{element.ArriveDate}</td>  
+                        <td>  #{element.DepartDate}</td>
+                        <td>  #{element.DepartAirline}</td>
+                        <td>  #{element.DepartFlightNumber}</td>
+                        <td>  #{element.ProjectID}</td>
+                        <td>  #{element.TeamID}</td>
+                        <td>  #{element.DistanceRR}</td>
+                        <td>  #{element.DistanceToProject}</td>  
+                        <td>  #{element.HotelID}</td>
+                        <td>  #{element.CountryID}</td>
+                        <td>  #{element.AirportID}</td>
+                        <td>  #{element.TeamRegistration}</td>
+                        <td>  #{element.Insurance}</td>
+                        <td>  #{element.Maxima}</td>
+                        <td>  #{element.ProjectMoney}</td>
+                        <td>  #{element.PartnershipID}</td> 
+                        <td>  #{element.TeamPartnerProfileID}</td>  
+                        <td>  #{element.TeamHost}</td>
+                        <td>  #{element.CulBroker}</td>
+                        <td>  #{element.TruckDriver}</td>
+                        <td>  #{element.BusDriver}</td>
+                        <td>  #{element.Translator}</td>
+                        <td>  #{element.StructureDelivery}</td>
+                        <td>  #{element.CancelTeam}</td>
+                        <td>  #{element.ProjectFundsRecieved}</td>
+                    </tr>
+            -});
+        </table>
+        <br>
+        <br> 
+        
+        <form id="edit-TeamDetails" action="edit-TeamDetails" method="POST" name="edit-TeamDetails">
+            -tableArrayEditTeamDetails.forEach(function (element) {
+                    <input type="hidden" name="newTeamDetailsID" value={element.TeamDetailsID} required readonly></input>
+            -});
+
+            <br />
+            <br />
+            <label for="newTotalDailyFunds">New Total Daily Funds:               </label>
+                <input id="newTotalDailyFunds" type = "number" name = "newTotalDailyFunds">
+        
+            <br>
+            <br />
+            <label for="newArriveFlightNumber">New Arrive Flight Number:               </label>
+                <input id="newArriveFlightNumber" type = "text" name = "newArriveFlightNumber">
+            
+            <br>
+            <br />
+            <label for="newArriveDate">New Arrive Date:               </label>
+                <input id="newArriveDate" type = "date" name = "newArriveDate">
+        
+            <br>
+            <br />
+            <label for="newDepartDate">New Depart Date:               </label>
+                <input id="newDepartDate" type = "date" name = "newDepartDate">
+        
+            <br>
+            <br />
+            <label for="newDepartAirline">New Depart Airline:           </label>
+                <input id="newDepartAirline" type = "text" name = "newDepartAirline">
+        
+            <br>
+            <br />
+            <label for="newDepartFlightNumber">New Depart Flight Number:               </label>
+                <input id="newDepartFlightNumber" type = "text" name = "newDepartFlightNumber">
+        
+            <br>
+            <br />
+            <label for="newDistanceToRR">New Distance to RR:               </label>
+                <input id="newDistanceToRR" type = "number" name = "newDistanceToRR">
+        
+            <br>
+            <br />
+            <label for="newDistanceToProject">New Distance to Project:               </label>
+                <input id="newDistanceToProject" type = "number" name = "newDistanceToProject">
+        
+            <br>
+            <br />
+            <label for="newTeamRegistration">Team Registration:               </label>
+                <select id = "newTeamRegistration" name = "newTeamRegistration" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newInsurance">New Insurance:               </label>
+                <select id = "newInsurance" name = "newInsurance" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newMaxima">Maxima:              </label>
+                <select id = "newMaxima" name = "newMaxima" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br />
+            <br />
+            <label for="newProjectMoney">New Project Money:              </label>
+                <input id="newProjectMoney" type = "number" name = "newProjectMoney">
+        
+            <br>
+            <br />
+            <label for="newTeamHost">New Team Host:               </label>
+                <select id = "newTeamHost" name = "newTeamHost" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br>
+            <br />
+            <label for="newCulBroker">New CulBroker:	             </label>
+                <select id = "newCulBroker" name = "newCulBroker" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+            
+            <br />
+            <br />
+            <label for="newTruckDriver">New Truck Driver	               </label>
+                <select id = "newTruckDriver" name = "newTruckDriver" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br />
+            <br />
+            <label for="newBusDriver">New Bus Driver:	               </label>
+                <select id = "newBusDriver" name = "newBusDriver" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br />
+            <br />
+            <label for="newTranslator">New Translator:	               </label>
+                <select id = "newTranslator" name = "newTranslator" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br />
+            <br />
+            <label for="newStructureDelivery">New Structure Delivery:	               </label>
+                <select id = "newStructureDelivery" name = "newStructureDelivery" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br />
+            <br />
+            <label for="newCancelTeam">New CancelTeam:	               </label>
+                <select id = "newCancelTeam" name = "newCancelTeam" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+        
+            <br />
+            <br />
+            <label for="newProjectFundsReceived">New Project Funds Received:	               </label>
+                <select id = "newProjectFundsReceived" name = "newProjectFundsReceived" required>
+                    <option value = -1> - </option>
+                    <option value = 1>YES</option>
+                    <option value = 0>NO</option>
+                </select>
+
+            <br>
+            <br />
+            <input type="Submit" value="Proceed To Choose Country">
+        </form>
+    </body>
+</html>

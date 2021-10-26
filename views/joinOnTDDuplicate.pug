@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Join TD Duplicate</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster1.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Team Member Registration For Duplicate TeamDetailsID [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently Assigning New Member. Options are below: </h3>
+
+        <form id="TIDAssign" action="TIDAssign" method="POST" name="TIDAssign">
+            <table>
+                <tr>
+                    <th>TeamDetailsID</th> 
+                    <th>ProjectID</th> 
+                    <th>NumTeamMemb</th> 
+                    <th>SELECT</th> 
+                </tr>
+                
+                <tr>
+                    -teamJoinArrayDup.forEach(function(element, index){ 
+                        <tr>
+                            <td>  #{element.TeamDetailsID}</td>  
+                            <td>  #{element.ProjectId}</td>
+                            <td>  #{element.NumTeamMemb}</td>
+                            <td>  <input id=#{index} type="Submit" name="TeamDetailsIDToAssign" value=#{index}></input></td>
+                        </tr>
+                    -});
+            </table>
+        </form>
+          
+    </body>
+</html>

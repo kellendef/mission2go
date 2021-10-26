@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Teams Member Editor</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/ETM.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="ScheduledTeamsView&Edit.html">Home</a>
+        </nav>
+
+        <h2> EDIT TeamMember(TEAMMEMBERS) [AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Select a Team Member to EDIT: </h3>
+
+        <form id="show-Member" action="show-Member" method="POST" name="show-Member">
+            <table>
+                <tr>
+                    <th>TeamID</th> 
+                    <th>TeamMemberID</th> 
+                    <th>FName</th> 
+                    <th>PhoneNumber</th> 
+                    <th>District</th> 
+                    <th>Email</th> 
+                    <th>FoodAllergies</th> 
+                    <th>MedicalAllergies</th>
+                </tr>
+
+                <tr>
+                    -tableArrayEditMember.forEach(function(element){
+                            <tr>
+                                <td>  #{element.TeamID}</td>
+                                <td>  #{element.TeamMemberID}</td>
+                                <td>  #{element.FName}</td>
+                                <td>  #{element.PhoneNumber}</td>
+                                <td>  #{element.District}</td>
+                                <td>  #{element.Email}</td>
+                                <td>  #{element.FoodAllergies}</td>
+                                <td>  #{element.MedicalAllergies}</td>
+                            </tr>
+                    -});
+            </table>
+        </form>
+        <br />
+        <br />
+        <div>
+            <form id="edit-Member" action="edit-Member" method="POST" name="edit-Member">
+                <input type = "hidden" id="EMTID" name="EMTID" required readonly>
+                    -tableArrayEditMember.forEach(function(element){
+                            document.getElementById('TeamMemberID').value=element.TeamMemberID
+                    -});
+        
+                <br>
+                <br />
+                <label for="EMFName">Full Name:               </label>
+                    <input id="EMFName" type = "text" name = "EMFName">
+            
+                <br>
+                <br />
+                <label for="EMPhoneNumber">Phone (format: (##########)): </label>
+                    <input id="EMPhoneNumber" type = "text" name = "EMPhoneNumber">
+        
+                <br>
+                <br />
+                <label for="EMCountry">Country</label>
+                    <select id="EMCountry" name = "EMCountry">
+                        <option value = 'United States'>United States</option>
+                        <option value = 'Canada'>Canada</option>
+                        <option value = 'Honduras'>Mexico</option>
+                        <option value = 'Nicaragua'>Nicaragua</option>
+                        <option value = 'Guatemala'>Guatemala</option>
+                        <option value = 'El Salvador'>El Salvador</option>
+                        <option value = 'Honduras'>Honduras</option>
+                        <option value = 'Nicaragua'>Argentina</option>
+                    </select>
+
+                <br />
+                <br />
+                <label for="EMDistrict">District Name:               </label>
+                    <input id="EMDistrict" type = "text" name = "EMDistrict">
+            
+                <br>
+                <br />
+                <label for="EMPreviousProjects">Have you done a Project for this organization before?:</label>
+                    <select id = "EMPreviousProjects" name = "EMPreviousProjects" required>
+                        <option value = -1> - </option>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMLastTrip">If so, provide an approvimate date, otherwise, leave this blank:               </label>
+                    <input id="EMLastTrip" type = "date" name = "EMLastTrip">
+        
+                <br>
+                <br />
+                <label for="EMSecondLanguage">Do you speak a second language well enough for basic conversation? if not, select [none]:</label>
+                    <select id = "EMSecondLanguage" name = "EMSecondLanguage" required>
+                        <option value = 1>NONE</option>
+                        <option value = 2>Spanish</option>
+                        <option value = 3>Portuguese</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMSkillsID">Skills (If more than one applies, Choose one at your discretion):               </label>
+                    <select id = "EMSkillsID" name = "EMSkillsID">
+                        <option value = 0>NONE<option>
+                        <option value = 1>Team Host<option>
+                        <option value = 2>Truck Driver</option>
+                        <option value = 3>Bus Driver</option>
+                        <option value = 4>Translator</option>
+                        <option value = 5>Electritian</option>
+                        <option value = 6>Welder</option>
+                        <option value = 7>Block Layer</option>
+                        <option value = 8>Tool Driver</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMTeamMemberTypeID">Team Leader Type?</label>
+                    <select id = "EMTeamMemberTypeID" name = "EMTeamMemberTypeID">
+                        <option value = 0>NONE</option>
+                        <option value = 1>USA</option>
+                        <option value = 2>MAXIMA</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMTeamLeader">Team Leader?</label>
+                    <select id = "EMTeamLeader" name = "EMTeamLeader">
+                        <option value = -1> - </option>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMMale">Are you Male?:</label>
+                    <select id = "EMMale" name = "EMMale" required>
+                        <option value = -1> - </option>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMFemale">Are you Female?:</label>
+                    <select id = "EMFemale" name = "EMFemale" required>
+                        <option value = -1> - </option>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMSpouseOnTeam">Is your spouse on the same team as you? (if N/A, select no):</label>
+                    <select id = "EMSpouseOnTeam" name = "EMSpouseOnTeam" required>
+                        <option value = -1> - </option>
+                        <option value = 1>YES</option>
+                        <option value = 0>NO</option>
+                    </select>
+        
+                <br>
+                <br />
+                <label for="EMPassPortExp">Passport Expiration Date:             </label>
+                    <input id="EMPassPortExp" type = "date" name = "EMPassPortExp" required>
+        
+                <br>
+                <br />
+                <h4> Please leave the next 2 fields blank if you have no allergies </h4>
+                <label for="EMFoodAllergies">Please list all food allergies you have in a comma seperated list:               </label>
+                    <input id="EMFoodAllergies" type = "text" name = "EMFoodAllergies">
+            
+                <br>
+                <br />
+                <label for="EMMedicalAllergies">Please list any medical allergies you have (e.g. penicillin), in a comma seperated list:               </label>
+                    <input id="EMMedicalAllergies" type = "text" name = "EMMedicalAllergies">
+        
+                <br>
+                <br />
+                <label for="EMDPI">DPI:               </label>
+                    <input id="EMDPI" type = "text" name = "EMDPI">
+        
+                <br>
+                <br />
+                <label for="EMEmail">Email Address:               </label>
+                    <input id="EMEmail" type = "text" name = "EMEmail" required>
+            
+                <br>
+                <br />
+                <input type="Submit" value="Save Changes">
+            </form>
+        </div>
+
+    </body>
+</html>

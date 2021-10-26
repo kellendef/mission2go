@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Country Records</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2>Registered Countries [AUTHORIZED USERS ONLY]</h2>
+        <br />
+        <h3> Viewing all currently Registered Countries</h3>
+        <a href="/newCountry" >Make A New Country Record here</a> 
+        <br>
+        <br>
+        <br />
+        <table>
+            <tr>
+                <th>CountryID</th> 
+                <th>CountryName</th> 
+                <th>FieldID</th>
+            </tr>
+
+            <tr>
+                -tableArrayAllCountries.forEach(function(element){ 
+                    <tr>
+                        <td>  #{element.CountryID}</td>
+                        <td>  #{element.CountryName}</td>
+                        <td>  #{element.FieldID}</td>
+                    </tr>
+                -});
+        </table>
+    </body>
+</html>

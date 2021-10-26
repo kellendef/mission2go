@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Assign TD Hotel</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Choose TeamDetails Hotel[AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently Choosing TD Hotel: </h3>
+        <a href="/newHotel" >Or Make A New Hotel here</a> 
+        <br>
+        <br>
+        <br />
+        <table>
+                <tr>
+                    <th>HotelID</th> 
+                    <th>HotelName</th> 
+                    <th>City</th> 
+                    <th>PhoneNum</th> 
+                </tr>
+                <tr>
+                    -tableArrayChooseHotel.forEach(function(element){ 
+                        <tr>
+                            <td>  #{element.HotelID}</td>
+                            <td>  #{element.HotelName}</td>
+                            <td>  #{element.City}</td> 
+                            <td>  #{element.PhoneNum}</td>
+                        </tr>
+                    -});
+        </table>
+        <br>
+        <br>  
+        <br />
+        <br />
+        <form id="edit-td-Hotel" action="edit-td-Hotel" method="POST" name="edit-td-Hotel">
+            <label for ="tdh">Select a Hotel: </label>
+                <select name = 'tdh' id = 'tdh'>
+                    -tableArrayChooseHotel.forEach(function(element,index){ 
+                        <option value = #{element.HotelID}>#{element.HotelName}</option>
+                    -});
+                </select> 
+            <input type="Submit" value="Meal Info">
+        </form>
+    </body>
+</html>

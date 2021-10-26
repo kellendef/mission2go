@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Assign Duplicate Teams</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/ATOD.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Assign Team (Select TeamMemberID) [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently Assigning the following Team: </h3>
+        <h3> [A TEAM WITH A TEAM ID OF 0 IS UNASSIGNED] </h3>
+
+        <table>
+            <tr>
+                <th>TeamID</th> 
+                <th>TeamDetailsID</th> 
+                <th>TeamName</th> 
+                <th>ChurchName</th> 
+                <th>District</th> 
+                <th>LeaderEmail</th> 
+                <th>LeaderName</th> 
+                <th>Partership</th>
+            </tr>
+
+            <tr>
+                -teamViewAssignOpts.forEach(function (element) {
+                    <tr>
+                        <td>  #{element.TeamID}</td>
+                        <td>  #{element.TeamDetailsID}</td>
+                        <td>  #{element.TeamName}</td>
+                        <td>  #{element.ChurchName}</td>
+                        <td>  #{element.District}</td>
+                        <td>  #{element.LeaderEmail}</td>
+                        <td>  #{element.LeaderName}</td>
+                        <td>  #{element.Partership}</td>
+                    </tr>
+                -});
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br />
+        <br />
+        
+        <form id="assign-Team" action="assign-Team" method="POST" name="assign-Team">
+            <label for="assign-Team">Select TeamID to assign: </label>
+            <input type = "hidden" id="newTeamID" name="newTeamID" required readonly></>
+                -teamViewAssignOpts.forEach(function (element) {
+                        document.getElementById('TeamID').value = element.TeamID
+                -});
+            <select id = 'SpecifyTeamDetail' name = 'SpecifyTeamDetail'>
+                    -teamViewAssignOpts.forEach(function(element){
+                            document.getElementById('TeamDetailsID').value=element.TeamDetailsID 
+                            document.write(option value = #{TeamDetailsID}>#{teamDetailsID} </option>
+                    -});
+            </select>
+            <input type="Submit" value="Proceed and Choose Project"></>
+
+        </form>
+        <br>
+    </body>
+</html>

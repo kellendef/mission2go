@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>New Country</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster3.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Add a Country [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently registering a new country: </h3>
+        
+        <form id="new-Country" action="new-Country" method="POST" name="new-Country">
+            <br>
+            <br />
+            <label for="newCountryName">New Country Name:               </label>
+                <input id="newCountryName" type = "text" name = "newCountryName" required>
+            
+            <br>
+            <br />
+            <label for ="ncf">Select A Field: </label>
+                <select name = 'ncf' id = 'ncf'>
+                    -tableArrayField.forEach(function(element,index){ 
+                        <option value = #{element.FieldID}>#{element.FieldName}</option>
+                    -});  
+                </select> 
+            
+            <br>
+            <br>
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

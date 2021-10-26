@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Assign TD Airport</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+    
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Choose TeamDetails Airport[AUTHORIZED USERS ONLY] </h2>
+        <br />
+        <h3> Currently Choosing TD airport: </h3>
+        <a href="/newAirport">Or Make A New Airport here</a> 
+        <br />
+        <br />
+        <br />
+        <table>
+            <tr>
+                <th>AirportID</th> 
+                <th>AirportName</th> 
+                <th>AirportCode</th> 
+                <th>City</th> 
+                <th>Country</th>
+            </tr>
+                -tableArrayChooseAirport.forEach(function (element) { 
+                    <tr>
+                        <td>  #{element.AirportID}</td>
+                        <td>  #{element.AirportName}</td>
+                        <td>  #{element.AirportCode}</td>
+                        <td>  #{element.City}</td>  
+                        <td>  #{element.Country}</td>
+                    </tr>
+                -});
+            
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br />
+        <br />
+        
+        <form id="edit-td-Airport" action="edit-td-Airport" method="POST" name="edit-td-Airport">
+            <label for ="tda">Select an Airport: </label>
+                <select name = 'tda' id = 'tda'>
+                    -tableArrayChooseAirport.forEach(function(element,index){ 
+                        <option value = #{element.AirportID}>#{element.AirportName}</option>
+                    -});  
+                </select> 
+                <input type="Submit" value="Choose Hotel">
+        </form>
+
+    </body>
+</html>

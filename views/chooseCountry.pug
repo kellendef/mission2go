@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Assign TD Country</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2> Choose TeamDetails Country[AUTHORIZED USERS ONLY] </h2>
+        <br>
+        <h3> Currently choosing the TD Country: </h3>
+        <a href="/newCountry" >Or Make A New Country Record here</a> 
+        <br/>
+        <br/>
+        <br/>
+        <table>
+            <tr>
+                <th>CountryID</th> 
+                <th>CountryName</th> 
+                <th>FieldID</th>
+            </tr>
+            <tr>    
+                -tableArrayChooseCountry.forEach(function (element) { 
+                    <tr>  
+                        <td>  #{element.CountryID}</td>
+                        <td>  #{element.CountryName}</td>
+                        <td>  #{element.FieldID}</td>
+                    </tr>
+                -});
+        </table>
+        <br>
+        <br>
+        <br/>
+        <br/>
+        <form id="edit-td-Country" action="edit-td-Country" method="POST" name="edit-td-Country">
+            <label for ="ctd">Select a Country: </label>
+                <select name = 'ctd' id = 'ctd'>
+                    -tableArrayChooseCountry.forEach(function(element,index){ 
+                            <option value = #{element.CountryID}>#{element.CountryName}</option>
+                    -});
+                </select> 
+            <input type="Submit" value="Choose Country">
+        </form>
+
+    </body>
+</html>
+ 

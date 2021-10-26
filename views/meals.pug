@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Meals</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+            <a href ="/createMeals">Create A New Meal</a>
+        </nav>
+
+        <h2> View Meals [AUTHORIZED USERS ONLY] </h2>
+        <br> 
+        <h3> Currently Viewing All Meals : </h3>
+        
+        <form id="get-MealsID" action="get-MealsID" method="POST" name="get-MealsID">
+            <table>
+                <tr>
+                    <th>MealID</th> 
+                    <th>MealDesc</th> 
+                    <th>DaysForThisMeal</th> 
+                    <th>MealDateStart</th> 
+                    <th>MealDateStop</th> 
+                    <th>MealCost</th> 
+                    <th>HowManyEating</th> 
+                    <th>TeamDetailsID</th> 
+                    <th>DELETE</th>
+                </tr>
+
+                <tr>
+                    -MealsViewArray.forEach(function(element){ 
+                            <tr>
+                                <td>  #{element.MealID}</td>
+                                <td>  #{element.MealDesc}</td>
+                                <td>  #{element.DaysForThisMeal}</td>
+                                <td>  #{element.MealDateStart}</td>
+                                <td>  #{element.MealDateStop}</td>
+                                <td>  #{element.MealCost}</td>
+                                <td>  #{element.HowManyEating}</td>
+                                <td>  #{element.TeamDetailsID}</td>
+                                <td><input id=#{index} type="Submit" name="RowForMealToDelete" value=#{index}></input></td>
+                                <td><input type="hidden" name="MID" value=#{element.MealID}></input></td>
+                            </tr>
+                    -});           
+            </table>
+            <br>
+            <br> 
+            <br />
+            <br />
+            <input type="Submit" value="Save Changes">
+        </form>
+    </body>
+</html>

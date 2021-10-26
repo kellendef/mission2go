@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Airport Records</title>
+        <meta charset="utf-8"/>
+        style
+            include ./CSS/cluster2.css
+    </head>
+
+    <body>
+        <nav>
+            <a href ="/ScheduledTeamsView&Edit">Home</a>
+        </nav>
+
+        <h2>Registered Airports [AUTHORIZED USERS ONLY]</h2>
+        <br />
+        <h3> Viewing all currently Registered Airports</h3>
+        <a href="/newAirport" >Make A New Airport Record here</a> 
+        <br>
+        <br />
+        <br />
+        <table>
+            <tr>
+                <th>AirportID</th> 
+                <th>AirportName</th> 
+                <th>AirportCode</th> 
+                <th>City</th> 
+                <th>CountryID</th>
+            </tr>
+
+            <tr>
+                -tableArrayAllAirports.forEach(function(element){ 
+                        <tr>
+                            <td>  #{element.AirportID}</td>
+                            <td>  #{element.AirportName}</td>
+                            <td>  #{element.AirportCode}</td> 
+                            <td>  #{element.City}</td>
+                            <td>  #{element.Country}</td>
+                        </tr>
+                -});
+        </table>
+
+    </body>
+</html>
